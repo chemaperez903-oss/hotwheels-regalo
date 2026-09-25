@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Un pequeño detalle 🏎️</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <!-- ==================== PANTALLA DE CARGA ==================== -->
+    <div id="loadingScreen">
+        <div class="loading-content">
+            <img src="logo_hotwheels.png" alt="Hot Wheels" class="loading-logo">
+            <p>Cargando tu ramo de Hot Wheels...</p>
+            <div class="loading-track">
+                <div id="loadingBar"></div>
+            </div>
+            <strong id="loadingPercent">0%</strong>
+        </div>
+    </div>
+
+    <main id="app" class="hidden">
+        <header class="intro">
+            <!-- ====== TEXTO PRINCIPAL: PUEDES CAMBIARLO ====== -->
+            <h1>
+                Feliz Día de los<br>
+                Carritos de Hot Wheels
+            </h1>
+
+            <!-- ====== TEXTO DE LAS FLORES ====== -->
+            <p>Toca una flor 🌸</p>
+
+            <!-- ====== BOTÓN DEL POEMA ====== -->
+            <button id="poemaBtn" type="button">
+                Fue para lo que me alcanzó jaja 
+            </button>
+        </header>
+
+        <section class="scene" id="scene">
+            <!-- Fondo de estrellas -->
+            <img class="star-gif" src="fondo_estrellas.gif" alt="" aria-hidden="true">
+
+            <!-- Carritos decorativos del fondo -->
+            <div class="floating-cars" aria-hidden="true">
+                <img src="car_bg_01_red_buggy.png" class="bg-car car-a" alt="">
+                <img src="bg_blue_race_car.png" class="bg-car car-b" alt="">
+                <img src="bg_flame_wheel.png" class="bg-car wheel-bg" alt="">
+            </div>
+
+            <!-- Video de las flores -->
+            <video id="flowerVideo" autoplay muted playsinline preload="auto">
+                <source src="flores.mp4" type="video/mp4">
+                Tu navegador no puede reproducir este video.
+            </video>
+
+            <!-- 7 zonas interactivas -->
+            <button class="flower-hotspot" data-car="hotwheels1.jpg" data-message="Está cosa llamada amor me confunde. No sé si soy demasiado cruel para merecerlo, o el amor es demasiado común para alguien tan raro como yo, que suele tener una pizca de locura...  -tim burton-" aria-label="Abrir regalo 1"></button>
+            <button class="flower-hotspot" data-car="hotwheels2.jpg" data-message="No te busqué, te encontré, y al instante todo cambió mi mundo se volvió aun mas bonito y mi corazón se alegro... " aria-label="Abrir regalo 2"></button>
+            <button class="flower-hotspot" data-car="hotwheels3.jpg" data-message="Eres el pequeño que se robo mi corazon... " aria-label="Abrir regalo 3"></button>
+            <button class="flower-hotspot" data-car="hotwheels4.jpg" data-message="No fuiste lo que esperaba, fuiste mucho mejor cuando llegaste tú, entendí por qué no funcionó con nadie más... " aria-label="Abrir regalo 4"></button>
+            <button class="flower-hotspot" data-car="hotwheels5.jpg" data-message="si te conviertes en demonio por el dolor que te ocasionó mi muerte, estaría esperandote en el limbo y me iría contigo al infierno... -no eres lo suficiente friki para entenderlo-  " aria-label="Abrir regalo 5"></button>
+            <button class="flower-hotspot" data-car="hotwheels6.jpg" data-message="Te daré mi futuro, también mi corazón, mi cuerpo y todo mi ser, estaremos juntos para siempre de verdad. te amo... -no eres lo suficiente friki para entenderlo- " aria-label="Abrir regalo 6"></button>
+            <button class="flower-hotspot" data-car="hotwheels7.jpg" data-message="Un otaku como yo no diria te amo... diria contigo solo quiero una relacion linda, quizas pueda ser como rintaro que le custa expresarlo que siento, pero se que a tu lado siempre me esfuerzo para mejorar" aria-label="Abrir regalo 7"></button>
+        </section>
+    </main>
+
+    <!-- ==================== TARJETA HOT WHEELS ==================== -->
+    <div id="carModal" class="modal" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+
+        <div class="flip-card" role="dialog" aria-modal="true">
+            <div class="flip-inner" id="flipInner">
+                <div class="card-face card-front">
+                    <img id="carImage" src="" alt="Carrito Hot Wheels">
+                </div>
+
+                <div class="card-face card-back">
+                    <div>
+                        <!-- ====== MENSAJE ESPECIAL: PUEDES CAMBIARLO ====== -->
+                        <span class="sparkle"></span>
+                        <h2>DE MI PARA TI </h2>
+                        <p id="mensajeEspecial">Porque algunos detalles pequeños significan mucho.</p>
+                        <button id="closeCar" type="button">Continuar 💖</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== POEMA ==================== -->
+    <div id="poemaModal" class="modal" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+
+        <div class="poema-card" role="dialog" aria-modal="true">
+            <button class="close-x" id="closePoema" type="button">×</button>
+            <h2>Querido Cristian: </h2>
+            <div class="poema-icon">🌹</div>
+
+            <p id="textoPoema">
+                No sé exactamente cómo empezar esta carta, porque siento que ninguna palabra será suficiente para expresar todo lo que siento por ti.<br><br>     
+                La primera vez que te vi, nunca imaginé que llegarías a ser alguien importante para mí. Pensé que eras un niño tierno y simplemente seguí con mi vida. Aunque en ese momento no entendía por qué, recuerdo que me diste mucha ternura.<br>
+                Con el paso del tiempo, al ver esos mensajes que eran para mí, decidí preguntar y averiguar quién era ese tierno niño. Nunca imaginé que, al aceptar esa solicitud, mi mundo cambiaría… y al final sí cambió. ¿Y te podrás preguntar por qué? Por cada mensaje que me dedicaste, por el tiempo que te tomaste para hacerme sentir única y por todas esas palabras que lograron alegrar mis días.<br>
+                En ocasiones me daba pena cuando me decías cosas bonitas y ni siquiera sabía cómo responder. Me ponía nerviosa y, sin darme cuenta, mi corazón comenzó a esperarlas con ilusión día con día.<br>
+                Un día que pudo haber sido cualquiera, llegué a Rancho Nuevo sin imaginar que viviría un momento que guardaría para siempre. Llegaste y te acercaste a hablarme. Te notaba nervioso, pero aun así lo hiciste, y después me abrazaste…<br>
+                ¡Ese abrazo! Me alegró completamente el día. Y qué irónico es que llegué a hacer mi servicio por amor a Cristo y regresé con un recuerdo tan bonito que siempre guardaré en mi corazón.<br>
+                Aunque llevamos poco tiempo hablando, me bastó para darme cuenta de que eres una de esas personas que no quiero perder.<br>
+                Estoy enamorada de ti. Puede sonar cursi, y no sé qué sucederá en el futuro, pero si hay algo que tengo claro es que quisiera estar contigo. 💕
+
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
